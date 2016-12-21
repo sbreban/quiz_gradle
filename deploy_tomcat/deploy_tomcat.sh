@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-cp ../build/libs/quiz.war $CATALINA_HOME/webapps/
+cp ../build/libs/quiz.war $1/webapps/

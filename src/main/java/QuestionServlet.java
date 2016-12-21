@@ -26,10 +26,12 @@ public class QuestionServlet extends HttpServlet {
     out.println("</head>");
     out.println("<body>");
 
+    String context = req.getContextPath() + "/questionServlet";
+
     List<Question> questionList = new ArrayList<Question>();
     try {
       questionList = Database.getInstance().getQuestions(testId);
-      out.println("<form action=\"/questionServlet\" method=\"post\">");
+      out.println("<form action=\""+context+"\" method=\"post\">");
       for (int i = 0; i < questionList.size(); i++) {
         Question question = questionList.get(i);
         out.println("<p><input type=\"text\" name=\"question" + i + "\" width=\"20\" value=\"" + question.getId() + "\"/>");

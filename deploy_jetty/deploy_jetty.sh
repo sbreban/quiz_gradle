@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-cp ../build/libs/quiz.war $JETTY_HOME/webapps/
+cp ../build/libs/quiz.war $1/webapps/

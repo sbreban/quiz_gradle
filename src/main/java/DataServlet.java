@@ -25,10 +25,12 @@ public class DataServlet extends HttpServlet {
     out.println("</head>");
     out.println("<body>");
 
+    String context = request.getContextPath() + "/questionServlet";
+
     try {
       List<Test> tests = Database.getInstance().getTests(level);
       for (Test test : tests) {
-        out.println("<form action=\"/questionServlet\" method=\"get\">");
+        out.println("<form action=\""+context+"\" method=\"get\">");
         out.println("<input type=\"text\" name=\"testId\" value=\"" + test.getId() + "\"/>");
         out.println("<input type=\"submit\" value=\"" + test.getName() + " Level "
             + test.getLevel() + "\"/>");
